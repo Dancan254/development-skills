@@ -15,14 +15,14 @@
     "technical-writing",
     "article"
   ],
-  "author": "[Your Name]",
+  "author": "Dancan254",
   "license": "MIT",
   "skills": "./skills/",
   "interface": {
     "displayName": "Development Skills",
     "shortDescription": "Spring Boot scaffold, DevOps, testing, observability, and article-writing skills for Kimi Code CLI.",
     "longDescription": "A skill pack for building and shipping production-ready Spring Boot / Java backends. Includes spring-scaffold for bootstrapping convention-compliant projects, devops-scaffold for Docker and CI, spring-testing for Testcontainers and Boot 4 test APIs, otel-setup for OpenTelemetry end-to-end, and article for drafting long-form technical pieces in your voice.",
-    "developerName": "[Your Name]",
-    "websiteURL": "https://github.com/[your-org]/development-skills"
+    "developerName": "Dancan254",
+    "websiteURL": "https://github.com/Dancan254/development-skills"
   }
 }
