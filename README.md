@@ -37,7 +37,7 @@ Kimi Code CLI version, but is typically something like:
 ```bash
 kimi plugin add /path/to/development-skills
 # or, once published:
-kimi plugin add <your-org>/development-skills
+kimi plugin add Dancan254/development-skills
 ```
 
 The manifest declares `"skills": "./skills/"`, so all skills are registered automatically.
@@ -45,7 +45,7 @@ The manifest declares `"skills": "./skills/"`, so all skills are registered auto
 ### Option B — Project-local (try it out)
 
 ```bash
-git clone https://github.com/<your-org>/development-skills.git
+git clone https://github.com/Dancan254/development-skills.git
 cd development-skills
 ```
 
