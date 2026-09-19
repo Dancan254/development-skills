@@ -9,7 +9,7 @@ the skill loads before doing work.
 This is a meta-project: the deliverables are the skill files themselves, not a running application.
 
 Kimi Code CLI discovers skills project-locally from the current working directory, globally from
-`~/.agents/skills/`, or as a plugin via `kimi.plugin.json` at the repo root. See `README.md` for
+`~/.agents/skills/`, or as a plugin via `.kimi-plugin/plugin.json`. See `README.md` for
 install instructions.
 
 The `article` skill is the exception to the terse-engineering style. It loads

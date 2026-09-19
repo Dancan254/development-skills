@@ -31,8 +31,8 @@ directory, or globally from the user skills directory (`~/.agents/skills/`).
 ### Option A — Plugin install (recommended)
 
 If Kimi Code CLI supports plugin installation from a local path or a repository, install the plugin
-using the `kimi.plugin.json` manifest at the root of this repo. The exact command depends on the
-Kimi Code CLI version, but is typically something like:
+using the manifest in `.kimi-plugin/plugin.json`. The exact command depends on the Kimi Code CLI
+version, but is typically something like:
 
 ```bash
 kimi plugin add /path/to/development-skills
