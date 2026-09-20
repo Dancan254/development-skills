@@ -6,6 +6,10 @@ A collection of Kimi Code CLI skills for Spring Boot / Java backend engineering 
 content skill. Each skill lives in `skills/<name>/SKILL.md` and may include `references/` files that
 the skill loads before doing work.
 
+Engineering skills: `spring-scaffold`, `spring-data-jpa`, `spring-security`, `api-design`,
+`spring-testing`, `devops-scaffold`, `otel-setup`, `kafka-setup`, `security-hardening`.
+Content skill: `article`.
+
 This is a meta-project: the deliverables are the skill files themselves, not a running application.
 
 Kimi Code CLI discovers skills project-locally from `.kimi-code/skills/` or `.agents/skills/` in

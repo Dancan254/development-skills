@@ -14,6 +14,11 @@ This repo ports the engineering-focused skills from `your-javaguy-skills` and re
 | `devops-scaffold` | Add or update `Dockerfile`, `docker-compose.yml`, and GitHub Actions CI for an existing project. |
 | `spring-testing` | Write and repair tests — Testcontainers 2.x setup, integration vs unit routing, and the Boot 4 test API (`@MockitoBean`, `MockMvcTester`, `RestTestClient`). |
 | `otel-setup` | Wire OpenTelemetry end to end — OTLP export, the Logback appender Boot does not ship, a local Grafana LGTM backend, and a runbook that proves all three signals land. |
+| `spring-data-jpa` | Add JPA persistence — entities, repositories, auditing, Flyway migrations, and integration tests. |
+| `spring-security` | Add JWT resource-server security — config, claim mapping, method security, and tests. |
+| `api-design` | Add OpenAPI/SpringDoc docs, API versioning, and consistent `ProblemDetail` error schemas. |
+| `kafka-setup` | Add Kafka producers/consumers — Spring Kafka config, JSON events, DLT handling, and Testcontainers tests. |
+| `security-hardening` | Add DevSecOps hardening — OWASP dependency check, secrets scanning, container scanning, and SBOM. |
 
 ### Content
 
@@ -145,10 +150,30 @@ You rarely invoke a skill by name; just describe the outcome you want.
     │   └── references/
     │       ├── containers.md
     │       └── conventions.md
-    └── otel-setup/
+    ├── otel-setup/
     │   ├── SKILL.md
     │   └── references/
     │       └── otel-reference.md
+    ├── spring-data-jpa/
+    │   ├── SKILL.md
+    │   └── references/
+    │       └── jpa-conventions.md
+    ├── spring-security/
+    │   ├── SKILL.md
+    │   └── references/
+    │       └── security-conventions.md
+    ├── api-design/
+    │   ├── SKILL.md
+    │   └── references/
+    │       └── openapi-conventions.md
+    ├── kafka-setup/
+    │   ├── SKILL.md
+    │   └── references/
+    │       └── kafka-conventions.md
+    ├── security-hardening/
+    │   ├── SKILL.md
+    │   └── references/
+    │       └── hardening-checklist.md
     └── article/
         ├── SKILL.md
         └── references/
