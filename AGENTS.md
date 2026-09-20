@@ -7,7 +7,8 @@ content skill. Each skill lives in `skills/<name>/SKILL.md` and may include `ref
 the skill loads before doing work.
 
 Engineering skills: `spring-scaffold`, `spring-data-jpa`, `spring-security`, `api-design`,
-`spring-testing`, `devops-scaffold`, `otel-setup`, `kafka-setup`, `security-hardening`.
+`spring-testing`, `devops-scaffold`, `otel-setup`, `kafka-setup`, `rabbitmq-setup`,
+`security-hardening`.
 Content skill: `article`.
 
 This is a meta-project: the deliverables are the skill files themselves, not a running application.

@@ -49,7 +49,7 @@ Add to `pom.xml` inside `<build><plugins>`:
 <plugin>
     <groupId>org.owasp</groupId>
     <artifactId>dependency-check-maven</artifactId>
-    <version>12.1.1</version>
+    <version>13.0.0</version>
     <configuration>
         <failBuildOnCVSS>7</failBuildOnCVSS>
         <suppressionFiles>
@@ -61,7 +61,7 @@ Add to `pom.xml` inside `<build><plugins>`:
 <plugin>
     <groupId>org.cyclonedx</groupId>
     <artifactId>cyclonedx-maven-plugin</artifactId>
-    <version>2.9.1</version>
+    <version>2.9.3</version>
 </plugin>
 ```
 
@@ -148,7 +148,7 @@ jobs:
       - name: Build image
         run: docker build -t app:${{ github.sha }} .
       - name: Scan image with Trivy
-        uses: aquasecurity/trivy-action@0.30.0
+        uses: aquasecurity/trivy-action@0.36.0
         with:
           image-ref: app:${{ github.sha }}
           format: sarif

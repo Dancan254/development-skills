@@ -18,6 +18,7 @@ This repo ports the engineering-focused skills from `your-javaguy-skills` and re
 | `spring-security` | Add JWT resource-server security — config, claim mapping, method security, and tests. |
 | `api-design` | Add OpenAPI/SpringDoc docs, API versioning, and consistent `ProblemDetail` error schemas. |
 | `kafka-setup` | Add Kafka producers/consumers — Spring Kafka config, JSON events, DLT handling, and Testcontainers tests. |
+| `rabbitmq-setup` | Add RabbitMQ producers/consumers — Spring AMQP config, JSON events, DLX handling, and Testcontainers tests. |
 | `security-hardening` | Add DevSecOps hardening — OWASP dependency check, secrets scanning, container scanning, and SBOM. |
 
 ### Content
@@ -170,6 +171,10 @@ You rarely invoke a skill by name; just describe the outcome you want.
     │   ├── SKILL.md
     │   └── references/
     │       └── kafka-conventions.md
+    ├── rabbitmq-setup/
+    │   ├── SKILL.md
+    │   └── references/
+    │       └── rabbitmq-conventions.md
     ├── security-hardening/
     │   ├── SKILL.md
     │   └── references/

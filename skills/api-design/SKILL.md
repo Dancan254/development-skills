@@ -46,11 +46,11 @@ Add to `pom.xml`:
 <dependency>
     <groupId>org.springdoc</groupId>
     <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-    <version>2.8.6</version>
+    <version>3.1.1</version>
 </dependency>
 ```
 
-Before writing, verify the latest SpringDoc 2.x version:
+Before writing, verify the latest SpringDoc version:
 
 ```bash
 curl -s "https://repo1.maven.org/maven2/org/springdoc/springdoc-openapi-starter-webmvc-ui/maven-metadata.xml" \
