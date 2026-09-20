@@ -25,49 +25,67 @@ This repo ports the engineering-focused skills from `your-javaguy-skills` and re
 
 ## Install
 
-Kimi Code CLI discovers skills in three ways: as a plugin, project-locally from the current working
-directory, or globally from the user skills directory (`~/.agents/skills/`).
+Kimi Code CLI discovers skills from these tiers (more specific scopes take priority):
+
+| Scope | Paths scanned |
+|-------|---------------|
+| Project | `.kimi-code/skills/<name>/SKILL.md` or `.agents/skills/<name>/SKILL.md` |
+| User | `~/.kimi-code/skills/<name>/SKILL.md` or `~/.agents/skills/<name>/SKILL.md` |
+| Plugin | Skills declared by enabled plugins |
+
+The default user path follows `$KIMI_CODE_HOME` when that variable is set; otherwise it is
+`~/.kimi-code`.
 
 ### Option A — Plugin install (recommended)
 
-If Kimi Code CLI supports plugin installation from a local path or a repository, install the plugin
-using the manifest in `.kimi-plugin/plugin.json`. The exact command depends on the Kimi Code CLI
-version, but is typically something like:
+Install this repo as a plugin from a local path or from GitHub, then reload. These are slash
+commands inside Kimi Code CLI, not shell commands:
 
-```bash
-kimi plugin add /path/to/development-skills
-# or, once published:
-kimi plugin add Dancan254/development-skills
+```text
+/plugins install /path/to/development-skills
+# or, from GitHub:
+/plugins install https://github.com/Dancan254/development-skills
 ```
 
-The manifest declares `"skills": "./skills/"`, so all skills are registered automatically.
+After installation completes, run `/reload` or start a new session (`/new`). The plugin manifest in
+`.kimi-plugin/plugin.json` declares `"skills": "./skills/"`, so all skills are registered
+automatically.
 
 ### Option B — Project-local (try it out)
+
+Clone the repo, then expose the `skills/` directory to Kimi Code CLI's project-level scanner:
 
 ```bash
 git clone https://github.com/Dancan254/development-skills.git
 cd development-skills
+mkdir -p .kimi-code
+ln -s "$PWD/skills" .kimi-code/skills
 ```
 
-Then just start talking to Kimi Code CLI from inside the repo. The skills in `skills/<name>/SKILL.md`
-are loaded automatically.
+Alternatively copy the skill directories into `.kimi-code/skills/` (or `.agents/skills/`). Then
+start Kimi Code CLI from inside the repo.
 
 ### Option C — User/global (always available)
 
-Make the skills available from any directory:
+Make the skills available from any directory by placing each skill folder directly under a user
+skills directory:
 
 ```bash
-ln -s /path/to/development-skills ~/.agents/skills/development-skills
+cd /path/to/development-skills
+mkdir -p ~/.kimi-code/skills
+for d in skills/*/; do
+  ln -s "$PWD/$d" ~/.kimi-code/skills/"$(basename "$d")"
+done
 ```
 
-Or copy the repo there if you don't want a symlink:
+Or copy instead of symlink:
 
 ```bash
-cp -r /path/to/development-skills ~/.agents/skills/development-skills
+cp -r /path/to/development-skills/skills/* ~/.kimi-code/skills/
 ```
 
-Restart or reload Kimi Code CLI if it was already running. Skills are read from `SKILL.md` files
-inside each `skills/<name>/` directory.
+You can use `~/.agents/skills/` instead of `~/.kimi-code/skills/` if you prefer. Restart or reload
+Kimi Code CLI if it was already running.
 
 ---
 
@@ -92,9 +110,10 @@ Once those placeholders are replaced, every article draft will sound like you in
 
 Each skill is a directory under `skills/<name>/` containing a `SKILL.md` file and optional `references/`.
 
-Kimi Code CLI loads skills automatically when the working directory is this repo (or when the skill
-pack is linked under `~/.agents/skills/`). Describe what you want in plain language; the skill
-description acts as the trigger. Example:
+Kimi Code CLI loads skills automatically when they are discoverable from the project
+(`.kimi-code/skills/` or `.agents/skills/`), from a user skills directory
+(`~/.kimi-code/skills/` or `~/.agents/skills/`), or through an enabled plugin. Describe what you
+want in plain language; the skill description acts as the trigger. Example:
 
 ```
 Scaffold a new Spring Boot project called order-service that manages Orders and Customers.

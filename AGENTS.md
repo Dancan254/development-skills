@@ -8,9 +8,9 @@ the skill loads before doing work.
 
 This is a meta-project: the deliverables are the skill files themselves, not a running application.
 
-Kimi Code CLI discovers skills project-locally from the current working directory, globally from
-`~/.agents/skills/`, or as a plugin via `.kimi-plugin/plugin.json`. See `README.md` for
-install instructions.
+Kimi Code CLI discovers skills project-locally from `.kimi-code/skills/` or `.agents/skills/` in
+the project root, globally from `~/.kimi-code/skills/` or `~/.agents/skills/`, or as a plugin via
+`.kimi-plugin/plugin.json`. See `README.md` for install instructions.
 
 The `article` skill is the exception to the terse-engineering style. It loads
 `references/voice-profile.md` and `references/article-craft.md` and drafts in the user's personal
